@@ -20,6 +20,10 @@ function exibirAlert() {
   swal('Salvo!', 'Salvo com sucesso.', 'success');
 }
 
+const editBtnName = (elemento) => {
+  elemento.textContent = 'Salvo';
+};
+
 btnAdd.onclick = function (e) {
   e.preventDefault();
 
@@ -50,7 +54,7 @@ btnAdd.onclick = function (e) {
                   <span onclick="editarFn(this)" 
                   class="btn-edit editBtn"> Editar</span
                 >
-                  <span onclick="exibirAlert()" 
+                  <span onclick="exibirAlert(), editBtnName(this)" 
                   class="editBtn"> Salvar</span
                 >
               </h3>
@@ -74,3 +78,4 @@ btnAdd.onclick = function (e) {
 
   idPost++;
 };
+
